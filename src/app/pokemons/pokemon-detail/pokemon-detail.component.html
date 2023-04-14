@@ -1,0 +1,43 @@
+<ng-container *ngIf="pokemon">
+    <div>
+        <mat-card class="pokemon-card">
+            <mat-card-content>
+                <mat-grid-list cols="2" rowHeight="100px">
+                    <mat-grid-tile rowspan="2">
+                        <div>
+                            <img mat-card-lg-image src="assets/img/official-artwork/{{pokemon.id}}.png">
+                            <div class="pokemon-number">No. {{ pokemon.id | number:'3.0-0' }}</div>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile rowspan="2">
+                        <mat-list>
+                            <mat-list-item>
+                                <div class="pokemon-name">
+                                    <span>{{ pokemon.name }}</span>
+                                    <audio autoplay #cry>
+                                        <source src="assets/audio/{{pokemon.id}}.mp3">
+                                    </audio>
+                                    <button mat-icon-button (click)="cry.play()"><mat-icon>play_circle_outline</mat-icon></button>       
+                                </div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-chip-set cdkDropListOrientation="horizontal">
+                                    <mat-chip *ngFor="let type of pokemon.types">{{ type }}</mat-chip>
+                                </mat-chip-set>
+                            </mat-list-item>
+                            <mat-list-item>Taille: {{ pokemon.height | number:'1.1-1' }} m</mat-list-item>
+                            <mat-list-item>Poids: {{ pokemon.weight | number:'1.1-1' }} kg</mat-list-item>
+                        </mat-list>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="2">{{ pokemon.description }}</mat-grid-tile>
+                </mat-grid-list>
+            </mat-card-content>
+        </mat-card>
+        <!--<span style="display: flex; justify-content: center; padding-top: 10px;">
+            <button mat-fab extended routerLink="/">Retour</button>
+        </span>-->
+        <span style="display: flex; justify-content: center; padding-top: 10px;">
+            <button mat-raised-button (click)="addPokemonToTeam()">Ajouter à l'équipe</button>
+        </span>
+    </div>
+</ng-container>

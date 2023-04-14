@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<body class="mat-typography mat-app-background">
+    <router-outlet>
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <img
+                    src="https://img.icons8.com/color/512/pokeball-2.png"
+                    height="20"
+                    alt=""
+                    loading="lazy"
+                />
+                <small style="padding-left: 5px;">Angumon</small>
+                <span class="menu-spacer"></span>
+                <div>
+                  <a mat-button routerLink="/pokedex"> Pokédex </a>
+                  <a mat-button routerLink="/team"> Mon équipe </a>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </router-outlet>
+</body>
+</html>

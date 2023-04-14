@@ -1,0 +1,33 @@
+:host {
+    height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card {
+    width: 450px;
+}
+
+.pokemon {
+    position: relative;
+    display: flex; 
+    width: 100%; 
+    align-items: center; 
+}
+
+.pokemon:hover .delete-icon {
+    display: block;
+}
+
+.delete-icon {
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 0;
+}
+
+.delete-icon:hover {
+    cursor: pointer;
+    color: #b9b9b9;
+}

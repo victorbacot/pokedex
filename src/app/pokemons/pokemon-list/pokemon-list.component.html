@@ -1,0 +1,9 @@
+<div id="searchBox">
+    <input type="text" id="searchInput" placeholder="Rechercher" (input)="searchPokemon(searchInput.value)" #searchInput>
+</div>
+<mat-nav-list class="pokemon-list" infiniteScroll (scrolled)="onScroll()" [scrollWindow]="false">
+    <mat-list-item *ngFor="let pokemon of pokemons" (click)="setPokemonId(pokemon.id)">
+        <img matListItemAvatar src="assets/img/sprites/{{pokemon.id}}.png" alt="...">
+        <span>{{ pokemon.id }}. {{ pokemon.name }}</span>
+    </mat-list-item>
+</mat-nav-list>

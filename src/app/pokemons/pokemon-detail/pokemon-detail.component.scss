@@ -1,0 +1,23 @@
+:host {
+    height: calc(100vh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-card {
+    width: 450px;
+}
+
+.pokemon-name {
+    display: flex;
+    align-items: center;
+}
+
+.pokemon-number {
+    text-align: center;
+}
+
+.notification {
+    background-color: black;
+}

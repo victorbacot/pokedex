@@ -1,0 +1,10 @@
+<mat-drawer-container class="pokedex-container" autosize>
+    <mat-drawer class="pokedex-sidenav" mode="side" opened>
+        <app-pokemon-list (pokemonId)="showPokemonData($event)"></app-pokemon-list>
+    </mat-drawer>
+    <div>
+        <ng-container *ngIf="pokemonId">
+            <app-pokemon-detail [id]="pokemonId"></app-pokemon-detail>
+        </ng-container>
+    </div>
+</mat-drawer-container>

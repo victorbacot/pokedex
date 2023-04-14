@@ -1,0 +1,15 @@
+.pokemon-list {
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+#searchBox {
+    height: 50px;
+}
+
+#searchInput {
+    width: 97%;
+    height: 25px;
+}

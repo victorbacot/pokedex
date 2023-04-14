@@ -1,0 +1,22 @@
+<ng-container>
+    <mat-card class="team-card">
+        <mat-card-header>
+            <mat-card-title>Mon équipe</mat-card-title>
+            <mat-card-subtitle>{{ trainer.email }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile *ngIf="!trainer.team" colspan="2">
+                    Aucun pokémon pour le moment !
+                </mat-grid-tile>
+                <mat-grid-tile *ngFor="let pokemon of trainer.team; let i = index">
+                    <div class="pokemon">
+                        <img mat-card-sm-image src="assets/img/sprites/{{pokemon.id}}.png">
+                        <span>{{ pokemon.name | uppercase }}</span>
+                        <mat-icon class="delete-icon" aria-hidden="false" fontIcon="cancel" (click)="removePokemonFromTeam(i)"></mat-icon>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>    
+        </mat-card-content>      
+    </mat-card>
+</ng-container>
